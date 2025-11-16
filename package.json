@@ -47,6 +47,7 @@
     "@bam.tech/eslint-plugin": "8.0.0",
     "@types/react": "~19.1.0",
     "@typescript-eslint/eslint-plugin": "^8.46.0",
+    "babel-plugin-react-compiler": "^1.0.0",
     "eslint": "^9.37.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-import-resolver-typescript": "^4.4.4",
