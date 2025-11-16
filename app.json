@@ -2,6 +2,7 @@
   "expo": {
     "name": "Toupi",
     "slug": "toupi",
+    "scheme": "toupi",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,12 +25,18 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
+      "bundler": "metro",
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-build-properties",
       "expo-font",
+      [
       "expo-router",
+      {
+        "root": "./src/app/navigation"
+      }
+    ],
       "expo-web-browser",
       "react-native-localize"
     ]
