@@ -27,6 +27,14 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "useUnknownInCatchVariables": true,
+    "baseUrl": "./",
+    "paths": {
+      "#app/*": ["./src/app/*"],
+      "#modules/*": ["./src/modules/*"],
+      "#shared/*": ["./src/shared/*"],
+      "#testing/*": ["./src/testing/*"],
+      "#assets/*": ["./assets/*"]
+    }
   },
   "exclude": [
     "node_modules",
@@ -36,6 +44,6 @@
     "coverage", // jest
     "dist", // expo updates
     ".expo-shared",
-    ".expo",
-  ],
+    ".expo"
+  ]
 }

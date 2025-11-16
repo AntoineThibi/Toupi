@@ -1,7 +1,30 @@
+import js from "@eslint/js";
 import bamtech from "@bam.tech/eslint-plugin";
+import reactCompiler from "eslint-plugin-react-compiler";
+import unusedImports from "eslint-plugin-unused-imports";
 
 export default [
   ...bamtech.configs.recommended,
+  js.configs.recommended,
+  reactCompiler.configs.recommended,
+  {
+    plugins: {
+      "unused-imports": unusedImports,
+    },
+    rules: {
+      "no-unused-vars": "off", // Typescript handles this
+      "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        {
+          vars: "all",
+          varsIgnorePattern: "^_",
+          args: "after-used",
+          argsIgnorePattern: "^_",
+        },
+      ],
+    },
+  },
   // Override for test files
   ...bamtech.configs.tests.map((config) => ({
     ...config,
