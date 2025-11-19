@@ -44,4 +44,16 @@ export default [
       },
     },
   })),
+  {
+    files: ["**/*.ts"],
+    rules: {
+      "@typescript-eslint/no-empty-object-type": [
+        "error",
+        // Allow overwriting of interfaces for example for the theme
+        // See: https://typescript-eslint.io/rules/no-empty-object-type/#allowinterfaces
+        // And: src/shared/design-system/theme/unistyles.ts
+        { allowInterfaces: "with-single-extends" },
+      ],
+    },
+  },
 ];
