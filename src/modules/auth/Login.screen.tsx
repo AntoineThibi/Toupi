@@ -1,11 +1,12 @@
 import { supabase } from "#shared/supabase/supabase.client";
 import { Button, Text, View } from "react-native";
+import { StyleSheet } from "react-native-unistyles";
 
 export const Login = () => {
   return (
     <View>
       <Text>Welcome to Toupi!</Text>
-      <View style={{ marginTop: 40 }}>
+      <View style={styles.container}>
         <Button
           title="Click me"
           onPress={() =>
@@ -19,3 +20,10 @@ export const Login = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create((theme) => ({
+  container: {
+    marginTop: 40,
+    backgroundColor: theme.colors.primary,
+  },
+}));
