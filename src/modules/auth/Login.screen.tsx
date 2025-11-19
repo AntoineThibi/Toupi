@@ -23,7 +23,7 @@ export const Login = () => {
 
 const styles = StyleSheet.create((theme) => ({
   container: {
-    marginTop: 40,
+    padding: 20,
     backgroundColor: theme.colors.primary,
   },
 }));
