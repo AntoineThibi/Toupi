@@ -1,9 +1,10 @@
-import { View, Text } from "react-native";
+import { Login } from "#modules/auth/Login.screen";
+import { View } from "react-native";
 
 const App = () => {
   return (
     <View>
-      <Text>Welcome to Toupi!</Text>
+      <Login />
     </View>
   );
 };
