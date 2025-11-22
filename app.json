@@ -39,8 +39,7 @@
           "root": "./src/app/navigation"
         }
       ],
-      "expo-web-browser",
-      "react-native-localize"
+      "expo-secure-store"
     ]
   }
 }
