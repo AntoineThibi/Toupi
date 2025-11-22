@@ -1,10 +1,11 @@
+import { ScreenTemplate } from "#shared/screenTemplate/ScreenTemplate";
 import { supabase } from "#shared/supabase/supabase.client";
 import { Button, Text, View } from "react-native";
 import { StyleSheet } from "react-native-unistyles";
 
 export const Login = () => {
   return (
-    <View>
+    <ScreenTemplate>
       <Text>Welcome to Toupi!</Text>
       <View style={styles.container}>
         <Button
@@ -17,7 +18,7 @@ export const Login = () => {
           }
         />
       </View>
-    </View>
+    </ScreenTemplate>
   );
 };
 
