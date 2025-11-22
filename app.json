@@ -39,7 +39,11 @@
           "root": "./src/app/navigation"
         }
       ],
-      "expo-secure-store"
+      "expo-secure-store",
+      [
+        "@zoontek/react-native-navigation-bar",
+        { "android": { "enforceNavigationBarContrast": true } }
+      ]
     ]
   }
 }

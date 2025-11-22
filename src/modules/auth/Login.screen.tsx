@@ -11,7 +11,7 @@ export const Login = () => {
         <Button
           title="Click me"
           onPress={() =>
-            supabase.auth.signUp({
+            supabase.auth.signInWithPassword({
               email: "antoine.thibierge@gmail.com",
               password: "password123",
             })
