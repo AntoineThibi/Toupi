@@ -6,6 +6,7 @@ import { queryClient } from "#shared/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { QueriesBoundary } from "#shared/QueriesBoundary/QueriesBoundary";
 import { useInitializeAuth, useSession } from "#modules/auth/auth.state";
+import { StatusBar } from "expo-status-bar";
 
 void SplashScreen.preventAutoHideAsync();
 
@@ -22,7 +23,6 @@ function RootLayout() {
               <Stack.Protected guard={!!session}>
                 <Stack.Screen name="(authenticated)" />
               </Stack.Protected>
-
               <Stack.Protected guard={!session}>
                 <Stack.Screen name="login" />
               </Stack.Protected>
@@ -30,6 +30,7 @@ function RootLayout() {
           </KeyboardProvider>
         </SafeAreaProvider>
       </QueriesBoundary>
+      <StatusBar style="dark" />
     </QueryClientProvider>
   );
 }
