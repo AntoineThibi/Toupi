@@ -4,6 +4,4 @@ export const darkTheme = {
     secondary: "#1ff4ff",
     // any nesting, spreading, arrays, etc.
   },
-  // functions, external imports, etc.
-  gap: (v: number) => v * 8,
 };
