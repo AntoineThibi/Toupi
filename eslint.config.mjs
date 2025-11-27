@@ -56,4 +56,10 @@ export default [
       ],
     },
   },
+  {
+    files: ["**/*.tsx"],
+    rules: {
+      "react-native/no-raw-text": "off",
+    },
+  },
 ];
