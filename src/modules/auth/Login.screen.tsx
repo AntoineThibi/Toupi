@@ -24,22 +24,26 @@ export const Login = () => {
   return (
     <ScreenTemplate>
       <View style={styles.container}>
-        <Typography variant="Title">{`Welcome to Toupi!`}</Typography>
-        <TextInput
-          placeholder="Email"
-          value={email}
-          onChangeText={setEmail}
-          style={styles.input}
-          autoCapitalize="none"
-          keyboardType="email-address"
-        />
-        <TextInput
-          placeholder="Password"
-          value={password}
-          onChangeText={setPassword}
-          style={styles.input}
-          secureTextEntry
-        />
+        <View style={styles.inputContainer}>
+          <View style={styles.titleContainer}>
+            <Typography variant="Title">C'est Toupi !</Typography>
+          </View>
+          <TextInput
+            placeholder="Email"
+            value={email}
+            onChangeText={setEmail}
+            style={styles.input}
+            autoCapitalize="none"
+            keyboardType="email-address"
+          />
+          <TextInput
+            placeholder="Password"
+            value={password}
+            onChangeText={setPassword}
+            style={styles.input}
+            secureTextEntry
+          />
+        </View>
         <View style={styles.buttonContainer}>
           <Button variant="primary" title="Login" onPress={handleLogin} />
           <Button title="Sign Up" onPress={handleSignUp} variant="secondary" />
@@ -50,8 +54,16 @@ export const Login = () => {
 };
 
 const styles = StyleSheet.create(() => ({
+  titleContainer: {
+    alignItems: "center",
+  },
   container: {
     padding: 20,
+    flex: 1,
+    justifyContent: "space-between",
+  },
+  inputContainer: {
+    gap: 16,
   },
   input: {
     marginBottom: 12,

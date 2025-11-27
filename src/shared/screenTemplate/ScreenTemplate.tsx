@@ -5,16 +5,18 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { StyleSheet } from "react-native-unistyles";
 
 export const ScreenTemplate = ({ children }: PropsWithChildren) => {
-  const { top } = useSafeAreaInsets();
+  const { top, bottom } = useSafeAreaInsets();
   return (
-    <View style={styles.container(top)}>
+    <View style={styles.container(top, bottom)}>
       <QueriesBoundary>{children}</QueriesBoundary>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: (top) => ({
+  container: (top, bottom) => ({
     paddingTop: top,
+    flex: 1,
+    paddingBottom: bottom,
   }),
 });
