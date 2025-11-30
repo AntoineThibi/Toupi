@@ -22,16 +22,20 @@ export const Button = ({ title, onPress, variant }: ButtonProps) => {
 const styles = StyleSheet.create((theme) => ({
   button: (variant: "primary" | "secondary") => ({
     backgroundColor:
-      variant === "primary" ? theme.colors.primary : "transparent",
+      variant === "primary" ? theme.colors.primary.medium : "transparent",
     padding: 15,
     borderRadius: 8,
     alignItems: "center",
     justifyContent: "center",
     borderWidth: variant === "secondary" ? 1 : 0,
-    borderColor: variant === "secondary" ? theme.colors.primary : "transparent",
+    borderColor:
+      variant === "secondary" ? theme.colors.primary.medium : "transparent",
   }),
   text: (variant: "primary" | "secondary") => ({
-    color: variant === "primary" ? "#fff" : theme.colors.primary,
+    color:
+      variant === "primary"
+        ? theme.colors.neutral.high
+        : theme.colors.primary.medium,
     fontSize: 16,
     fontWeight: "600",
   }),

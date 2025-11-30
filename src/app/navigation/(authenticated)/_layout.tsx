@@ -16,11 +16,16 @@ export default function AppLayout() {
       <NativeTabs.Trigger name="index">
         <Label>{`Toupi`}</Label>
         {Platform.select({
-          ios: <Icon sf="pawprint.fill" selectedColor={theme.colors.primary} />,
+          ios: (
+            <Icon
+              sf="pawprint.fill"
+              selectedColor={theme.colors.primary.medium}
+            />
+          ),
           android: (
             <Icon
               src={<VectorIcon family={Ionicons} name="paw" />}
-              selectedColor={theme.colors.primary}
+              selectedColor={theme.colors.primary.medium}
             />
           ),
         })}
@@ -28,7 +33,12 @@ export default function AppLayout() {
       <NativeTabs.Trigger name="profile">
         <Label>{`Profile`}</Label>
         {Platform.select({
-          ios: <Icon sf="figure.wave" selectedColor={theme.colors.primary} />,
+          ios: (
+            <Icon
+              sf="figure.wave"
+              selectedColor={theme.colors.primary.medium}
+            />
+          ),
           android: (
             <Icon
               src={
@@ -37,7 +47,7 @@ export default function AppLayout() {
                   name="human-greeting-variant"
                 />
               }
-              selectedColor={theme.colors.primary}
+              selectedColor={theme.colors.primary.medium}
             />
           ),
         })}

@@ -13,10 +13,11 @@ export const ScreenTemplate = ({ children }: PropsWithChildren) => {
   );
 };
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create((theme) => ({
   container: (top, bottom) => ({
     paddingTop: top,
     flex: 1,
     paddingBottom: bottom,
+    backgroundColor: theme.colors.neutral.high,
   }),
-});
+}));
