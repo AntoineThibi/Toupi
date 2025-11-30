@@ -26,7 +26,8 @@ export const Login = () => {
       <View style={styles.container}>
         <View style={styles.inputContainer}>
           <View style={styles.titleContainer}>
-            <Typography variant="Title">C'est Toupi !</Typography>
+            <Typography variant="Title">C'est</Typography>
+            <Typography variant="BigTitle">Toupi !</Typography>
           </View>
           <TextInput
             placeholder="Email"

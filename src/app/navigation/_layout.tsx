@@ -7,12 +7,15 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { QueriesBoundary } from "#shared/QueriesBoundary/QueriesBoundary";
 import { useInitializeAuth, useSession } from "#modules/auth/auth.state";
 import { StatusBar } from "expo-status-bar";
+import { useInitializeFonts } from "#shared/design-system/theme/fonts";
 
 void SplashScreen.preventAutoHideAsync();
 
 function RootLayout() {
   useInitializeAuth();
   const { user: session } = useSession();
+
+  useInitializeFonts();
 
   return (
     <QueryClientProvider client={queryClient}>
