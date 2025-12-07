@@ -12,9 +12,9 @@ export const lightTheme = {
       medium: colors.petalRouge["800"],
       high: colors.petalRouge["1000"],
     },
-    neutral: {
-      low: "#000000",
-      high: "#FFFFFF",
+    contrast: {
+      low: colors.neutral.low,
+      high: colors.neutral.high,
     },
     error: {
       low: colors.petalRouge["300"],

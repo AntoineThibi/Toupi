@@ -34,7 +34,7 @@ const styles = StyleSheet.create((theme) => ({
   text: (variant: "primary" | "secondary") => ({
     color:
       variant === "primary"
-        ? theme.colors.neutral.high
+        ? theme.colors.contrast.high
         : theme.colors.primary.medium,
     fontSize: 16,
     fontWeight: "600",

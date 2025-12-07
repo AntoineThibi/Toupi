@@ -18,6 +18,6 @@ const styles = StyleSheet.create((theme) => ({
     paddingTop: top,
     flex: 1,
     paddingBottom: bottom,
-    backgroundColor: theme.colors.neutral.high,
+    backgroundColor: theme.colors.contrast.high,
   }),
 }));

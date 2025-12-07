@@ -79,4 +79,8 @@ export const colors = {
     12: "#BE8A9B",
     13: "#0B1020",
   },
+  neutral: {
+    low: "#202020ff",
+    high: "#FFFFFF",
+  },
 };
