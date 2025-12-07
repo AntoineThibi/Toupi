@@ -19,7 +19,7 @@ export const typographies = {
     lineHeight: 64 * 1.4,
   },
   P1: {
-    //   fontFamily: typographie.font.family.title,
+    fontFamily: "Patrick Hand",
     fontSize: 18,
     fontStyle: "normal",
     fontWeight: 700,

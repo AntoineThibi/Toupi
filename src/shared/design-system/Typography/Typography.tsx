@@ -6,12 +6,12 @@ import { PropsWithChildren } from "react";
 import { Text, TextProps } from "react-native";
 
 type Props = {
-  variant: keyof typeof typographies;
+  variant?: keyof typeof typographies;
 } & TextProps;
 
 export const Typography = ({
   children,
-  variant,
+  variant = "P1",
   style,
   ...props
 }: PropsWithChildren<Props>) => {
