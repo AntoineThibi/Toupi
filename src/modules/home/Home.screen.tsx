@@ -1,12 +1,21 @@
+import { Button } from "#shared/design-system/Button/Button";
+import { Typography } from "#shared/design-system/Typography/Typography";
 import { ScreenTemplate } from "#shared/screenTemplate/ScreenTemplate";
-import { supabase } from "#shared/supabase/supabase.client";
-import { Button, Text } from "react-native";
+import { UnistylesRuntime } from "react-native-unistyles";
 
 export const Home = () => {
   return (
     <ScreenTemplate>
-      <Text>Home Screen</Text>
-      <Button title="Logout" onPress={() => supabase.auth.signOut()} />
+      <Typography variant="Title">Le Canapé</Typography>
+      <Button
+        variant="tertiary"
+        title="Change theme"
+        onPress={() =>
+          UnistylesRuntime.setTheme(
+            UnistylesRuntime.themeName === "dark" ? "light" : "dark",
+          )
+        }
+      />
     </ScreenTemplate>
   );
 };

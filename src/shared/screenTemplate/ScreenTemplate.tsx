@@ -19,5 +19,6 @@ const styles = StyleSheet.create((theme) => ({
     flex: 1,
     paddingBottom: bottom,
     backgroundColor: theme.colors.contrast.high,
+    paddingHorizontal: 20,
   }),
 }));
