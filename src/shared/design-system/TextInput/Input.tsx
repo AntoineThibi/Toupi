@@ -1,3 +1,4 @@
+import { typographies } from "#shared/design-system/theme/typographies";
 import { TextInput, TextInputProps, View } from "react-native";
 import { StyleSheet } from "react-native-unistyles";
 
@@ -6,7 +7,7 @@ type InputProps = TextInputProps;
 export const Input = ({ style, ...props }: InputProps) => {
   return (
     <View style={styles.container}>
-      <TextInput style={[styles.input, style]} {...props} />
+      <TextInput style={[styles.input, typographies["P1"], style]} {...props} />
     </View>
   );
 };
