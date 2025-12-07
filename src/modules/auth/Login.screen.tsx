@@ -11,7 +11,7 @@ import { useLogin } from "#modules/auth/auth.queries";
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { mutate, status } = useLogin();
+  const { mutate, error } = useLogin();
 
   const handleLogin = () => {
     mutate({ email, password });
@@ -30,6 +30,8 @@ export const Login = () => {
     Alert.alert("Sign up not implemented yet.");
   };
 
+  const errorMessage = error?.message;
+
   return (
     <ScreenTemplate>
       <View style={styles.container}>
@@ -44,12 +46,14 @@ export const Login = () => {
             onChangeText={setEmail}
             autoCapitalize="none"
             keyboardType="email-address"
+            errorLabel={errorMessage}
           />
           <Input
             placeholder="Password"
             value={password}
             onChangeText={setPassword}
             secureTextEntry
+            errorLabel={errorMessage}
           />
         </View>
         <View style={styles.buttonContainer}>
