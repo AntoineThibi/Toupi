@@ -1,4 +1,7 @@
-import { typographies } from "#shared/design-system/theme/typographies";
+import {
+  typographieColors,
+  typographies,
+} from "#shared/design-system/theme/typographies";
 import { PropsWithChildren } from "react";
 import { Text, TextProps } from "react-native";
 
@@ -13,7 +16,10 @@ export const Typography = ({
   ...props
 }: PropsWithChildren<Props>) => {
   return (
-    <Text style={[typographies[variant], style]} {...props}>
+    <Text
+      style={[typographies[variant], typographieColors[variant], style]}
+      {...props}
+    >
       {children}
     </Text>
   );

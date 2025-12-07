@@ -4,8 +4,8 @@ export const darkTheme = {
   colors: {
     primary: {
       low: colors.walnut["500"],
-      medium: colors.walnut["300"],
-      high: colors.walnut["100"],
+      medium: colors.walnut["700"],
+      high: colors.walnut["900"],
     },
     secondary: {
       low: colors.petalRouge["1000"],

@@ -1,4 +1,5 @@
 import { Platform } from "react-native";
+import { StyleSheet } from "react-native-unistyles";
 
 export const typographies = {
   BigTitle: {
@@ -25,3 +26,17 @@ export const typographies = {
     lineHeight: 18 * 1.4,
   },
 } as const;
+
+export const typographieColors = StyleSheet.create<
+  Record<keyof typeof typographies, { color: string }>
+>((theme) => ({
+  BigTitle: {
+    color: theme.colors.primary.medium,
+  },
+  Title: {
+    color: theme.colors.primary.medium,
+  },
+  P1: {
+    color: theme.colors.primary.medium,
+  },
+}));
