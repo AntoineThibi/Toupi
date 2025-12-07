@@ -1,5 +1,4 @@
 import { ScreenTemplate } from "#shared/screenTemplate/ScreenTemplate";
-import { supabase } from "#shared/supabase/supabase.client";
 import { View, Alert } from "react-native";
 import { Button } from "#shared/design-system/Button/Button";
 import { StyleSheet, UnistylesRuntime } from "react-native-unistyles";
@@ -7,17 +6,19 @@ import { StyleSheet, UnistylesRuntime } from "react-native-unistyles";
 import React, { useState } from "react";
 import { Typography } from "#shared/design-system/Typography/Typography";
 import { Input } from "#shared/design-system/TextInput/Input";
+import { useLogin } from "#modules/auth/auth.queries";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { mutate, status } = useLogin();
 
-  const handleLogin = async () => {
-    await supabase.auth.signInWithPassword({ email, password });
+  const handleLogin = () => {
+    mutate({ email, password });
   };
 
-  const quickConnect = async () => {
-    await supabase.auth.signInWithPassword({
+  const quickConnect = () => {
+    mutate({
       email: "antoine.thibierge@gmail.com",
       password: "password123",
     });
@@ -53,7 +54,7 @@ export const Login = () => {
         </View>
         <View style={styles.buttonContainer}>
           <Button
-            variant="secondary"
+            variant="tertiary"
             title="Change theme"
             onPress={() =>
               UnistylesRuntime.setTheme(
@@ -69,7 +70,7 @@ export const Login = () => {
               <Button
                 title="Quick Connect"
                 onPress={quickConnect}
-                variant="secondary"
+                variant="tertiary"
               />
             )
           }

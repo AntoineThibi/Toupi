@@ -7,7 +7,7 @@ import { StyleSheet } from "react-native-unistyles";
 interface ButtonProps {
   title: string;
   onPress: () => void;
-  variant: "primary" | "secondary";
+  variant: "primary" | "secondary" | "tertiary";
 }
 
 export const Button = ({ title, onPress, variant }: ButtonProps) => {
@@ -22,7 +22,10 @@ export const Button = ({ title, onPress, variant }: ButtonProps) => {
 };
 
 const styles = StyleSheet.create((theme) => ({
-  button: (variant: "primary" | "secondary", pressed: boolean) => ({
+  button: (
+    variant: "primary" | "secondary" | "tertiary",
+    pressed: boolean,
+  ) => ({
     padding: 12,
     borderRadius: 32,
     alignItems: "center",
@@ -30,7 +33,7 @@ const styles = StyleSheet.create((theme) => ({
     ...buttonTheme(theme)[variant][pressed ? "pressed" : "default"],
     ...buttonTheme(theme)[variant].base,
   }),
-  text: (variant: "primary" | "secondary") => ({
+  text: (variant: "primary" | "secondary" | "tertiary") => ({
     ...buttonTheme(theme).text[variant],
   }),
 }));
