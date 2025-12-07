@@ -16,16 +16,14 @@ export const Button = ({ title, onPress, variant }: ButtonProps) => {
       style={({ pressed }) => styles.button(variant, pressed)}
       onPress={onPress}
     >
-      <Typography variant="P1" style={styles.text(variant)}>
-        {title}
-      </Typography>
+      <Typography style={styles.text(variant)}>{title}</Typography>
     </Pressable>
   );
 };
 
 const styles = StyleSheet.create((theme) => ({
   button: (variant: "primary" | "secondary", pressed: boolean) => ({
-    padding: 16,
+    padding: 12,
     borderRadius: 32,
     alignItems: "center",
     justifyContent: "center",
@@ -33,8 +31,6 @@ const styles = StyleSheet.create((theme) => ({
     ...buttonTheme(theme)[variant].base,
   }),
   text: (variant: "primary" | "secondary") => ({
-    fontSize: 16,
-    fontWeight: "600",
     ...buttonTheme(theme).text[variant],
   }),
 }));

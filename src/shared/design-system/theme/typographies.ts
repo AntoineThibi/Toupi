@@ -1,5 +1,4 @@
 import { Platform } from "react-native";
-import { StyleSheet } from "react-native-unistyles";
 
 export const typographies = {
   BigTitle: {
@@ -20,23 +19,23 @@ export const typographies = {
   },
   P1: {
     fontFamily: "Patrick Hand",
-    fontSize: 18,
+    fontSize: 20,
     fontStyle: "normal",
     fontWeight: 700,
+    lineHeight: 20 * 1.4,
+  },
+  P2: {
+    fontFamily: "Caveat_600SemiBold",
+    fontSize: 18,
+    fontStyle: "normal",
+    fontWeight: 600,
+    lineHeight: 18 * 1.4,
+  },
+  P3: {
+    fontFamily: "Caveat_400Regular",
+    fontSize: 18,
+    fontStyle: "normal",
+    fontWeight: 400,
     lineHeight: 18 * 1.4,
   },
 } as const;
-
-export const typographieColors = StyleSheet.create<
-  Record<keyof typeof typographies, { color: string }>
->((theme) => ({
-  BigTitle: {
-    color: theme.colors.primary.medium,
-  },
-  Title: {
-    color: theme.colors.primary.medium,
-  },
-  P1: {
-    color: theme.colors.primary.medium,
-  },
-}));

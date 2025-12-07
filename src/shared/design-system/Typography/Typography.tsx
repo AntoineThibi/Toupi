@@ -1,9 +1,7 @@
-import {
-  typographieColors,
-  typographies,
-} from "#shared/design-system/theme/typographies";
+import { typographies } from "#shared/design-system/theme/typographies";
 import { PropsWithChildren } from "react";
 import { Text, TextProps } from "react-native";
+import { StyleSheet } from "react-native-unistyles";
 
 type Props = {
   variant?: keyof typeof typographies;
@@ -16,11 +14,14 @@ export const Typography = ({
   ...props
 }: PropsWithChildren<Props>) => {
   return (
-    <Text
-      style={[typographies[variant], typographieColors[variant], style]}
-      {...props}
-    >
+    <Text style={[typographies[variant], styles.text, style]} {...props}>
       {children}
     </Text>
   );
 };
+
+const styles = StyleSheet.create(({ colors }) => ({
+  text: {
+    color: colors.primary.medium,
+  },
+}));
