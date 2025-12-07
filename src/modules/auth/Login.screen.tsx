@@ -1,11 +1,12 @@
 import { ScreenTemplate } from "#shared/screenTemplate/ScreenTemplate";
 import { supabase } from "#shared/supabase/supabase.client";
-import { View, TextInput, Alert } from "react-native";
+import { View, Alert } from "react-native";
 import { Button } from "#shared/design-system/Button/Button";
 import { StyleSheet, UnistylesRuntime } from "react-native-unistyles";
 
 import React, { useState } from "react";
 import { Typography } from "#shared/design-system/Typography/Typography";
+import { Input } from "#shared/design-system/TextInput/Input";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -29,19 +30,17 @@ export const Login = () => {
             <Typography variant="Title">C'est</Typography>
             <Typography variant="BigTitle">Toupi !</Typography>
           </View>
-          <TextInput
+          <Input
             placeholder="Email"
             value={email}
             onChangeText={setEmail}
-            style={styles.input}
             autoCapitalize="none"
             keyboardType="email-address"
           />
-          <TextInput
+          <Input
             placeholder="Password"
             value={password}
             onChangeText={setPassword}
-            style={styles.input}
             secureTextEntry
           />
         </View>
@@ -74,14 +73,6 @@ const styles = StyleSheet.create(() => ({
   },
   inputContainer: {
     gap: 16,
-  },
-  input: {
-    marginBottom: 12,
-    padding: 10,
-    borderWidth: 1,
-    borderColor: "#ccc",
-    borderRadius: 6,
-    backgroundColor: "#fff",
   },
   buttonContainer: {
     gap: 16,
