@@ -1,7 +1,7 @@
 import { ScreenTemplate } from "#shared/screenTemplate/ScreenTemplate";
 import { View, Alert } from "react-native";
 import { Button } from "#shared/design-system/Button/Button";
-import { StyleSheet, UnistylesRuntime } from "react-native-unistyles";
+import { StyleSheet } from "react-native-unistyles";
 
 import React, { useState } from "react";
 import { Typography } from "#shared/design-system/Typography/Typography";
@@ -57,15 +57,6 @@ export const Login = () => {
           />
         </View>
         <View style={styles.buttonContainer}>
-          <Button
-            variant="tertiary"
-            title="Change theme"
-            onPress={() =>
-              UnistylesRuntime.setTheme(
-                UnistylesRuntime.themeName === "dark" ? "light" : "dark",
-              )
-            }
-          />
           <Button variant="primary" title="Login" onPress={handleLogin} />
           <Button title="Sign Up" onPress={handleSignUp} variant="secondary" />
           {
