@@ -12,8 +12,15 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
-    void supabase.auth.signInWithPassword({ email, password });
+  const handleLogin = async () => {
+    await supabase.auth.signInWithPassword({ email, password });
+  };
+
+  const quickConnect = async () => {
+    await supabase.auth.signInWithPassword({
+      email: "antoine.thibierge@gmail.com",
+      password: "password123",
+    });
   };
 
   const handleSignUp = () => {
@@ -56,6 +63,16 @@ export const Login = () => {
           />
           <Button variant="primary" title="Login" onPress={handleLogin} />
           <Button title="Sign Up" onPress={handleSignUp} variant="secondary" />
+          {
+            // eslint-disable-next-line no-undef
+            __DEV__ && (
+              <Button
+                title="Quick Connect"
+                onPress={quickConnect}
+                variant="secondary"
+              />
+            )
+          }
         </View>
       </View>
     </ScreenTemplate>
