@@ -52,7 +52,7 @@
   "typescript.preferences.includePackageJsonAutoImports": "on",
   "nodejs.terminal.activateEnvironment": true,
   "workbench.colorCustomizations": {
-    "statusBar.background": "#180e01",
+    "statusBar.background": "#46230f",
     "statusBar.foreground": "#FFFFFF"
   }
 }
